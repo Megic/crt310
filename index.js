@@ -1,5 +1,5 @@
 const ffi = require('ffi-napi');
-const ref = require('ref');
+const ref = require('ref-napi');
 const path = require('path');
 const bsplit = require('buffer-split');
 const R = require('ramda');
