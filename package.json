@@ -1,6 +1,6 @@
 {
   "name": "crt310-napi",
-  "version": "1.10.1",
+  "version": "1.10.4",
   "description": "Driver for crt-310",
   "main": "index.js",
   "scripts": {

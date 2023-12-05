@@ -94,6 +94,7 @@ const libcrt = ffi.Library(hazardous(path.join(__dirname, './lib/CRT_310')), {
   CommOpen: [ 'pointer', [ 'string' ]],
   CommClose: [ 'int', [ 'pointer' ]],
   CRT310_Reset: [ 'int', [ 'pointer', 'int' ]], // 0=不弹卡 1=前端弹卡 2=后端弹卡
+  CRT310_LEDSet: [ 'int', [ 'pointer', 'int' ]], // 设置开关
   CRT310_CardSetting: [ 'int', [ 'pointer', 'int', 'int' ]],
   CRT310_CardPosition: [ 'int', [ 'pointer', 'int' ]],
   CRT310_GetStatus: [ 'int', [ 'pointer', 'pointer', 'pointer', 'pointer' ]],
@@ -160,6 +161,18 @@ hardware.CRT310_CardSetting = (handle, cardIn, enableBackIn) => {
 hardware.CRT310_CardPosition = (handle, position) => {
   try {
     const res = libcrt.CRT310_CardPosition(handle, position);
+    if (res === 0) {
+      return { error: 0 };
+    }
+    return { error: -1 };
+  } catch (e) {
+    return { error: -1 };
+  }
+};
+
+hardware.CRT310_LEDSet = (handle, position) => {
+  try {
+    const res = libcrt.CRT310_LEDSet(handle, position);
     if (res === 0) {
       return { error: 0 };
     }

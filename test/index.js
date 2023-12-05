@@ -4,8 +4,8 @@ const crt = require('../index');
 
 describe('test com port connect', () => {
   let device;
-  it('should open COM3 successfully', () => {
-    const { error, data } = crt.CommOpen('COM3');
+  it('should open COM4 successfully', () => {
+    const { error, data } = crt.CommOpen('COM4');
     assert(error === 0);
     device = data.handle;
   });
@@ -21,8 +21,8 @@ describe('test com port connect', () => {
 
 describe('test mc track read', () => {
   let device;
-  it('should open COM3 successfully', () => {
-    const { error, data } = crt.CommOpen('COM3');
+  it('should open COM4 successfully', () => {
+    const { error, data } = crt.CommOpen('COM4');
     assert(error === 0);
     device = data.handle;
   });
@@ -41,8 +41,8 @@ describe('test mc track read', () => {
 
 describe('test read move', () => {
   let device;
-  it('should open COM3 successfully', () => {
-    const { error, data } = crt.CommOpen('COM3');
+  it('should open COM4 successfully', () => {
+    const { error, data } = crt.CommOpen('COM4');
     assert(error === 0);
     device = data.handle;
   });
@@ -65,8 +65,8 @@ describe('test read move', () => {
 
 describe('test ic card read', () => {
   let device;
-  it('should open COM3 successfully', () => {
-    const { error, data } = crt.CommOpen('COM3');
+  it('should open COM4 successfully', () => {
+    const { error, data } = crt.CommOpen('COM4');
     assert(error === 0);
     device = data.handle;
   });
